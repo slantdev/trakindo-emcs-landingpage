@@ -1,0 +1,8 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import 'partials/global.css';
+@import 'partials/fonts.css';
+@import 'partials/navbar.css';
+@import 'partials/scrollmagic.css';

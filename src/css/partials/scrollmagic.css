@@ -1,0 +1,144 @@
+#eclipse,
+#img-01,
+#img-02,
+#img-03,
+#img-04,
+#img-05,
+#dot-pattern-1,
+#dot-pattern-2,
+#plus-pattern-1,
+#plus-pattern-2,
+#plus-pattern-3,
+#letter-s,
+#letter-c,
+#letter-i,
+#letter-s-2,
+#subtitle,
+#title,
+#description,
+#social-follow {
+  @apply absolute transition-all duration-700 ease-out opacity-0;
+  .loaded & {
+    @apply opacity-100;
+  }
+}
+#eclipse {
+  @apply scale-50 inset-0;
+  .loaded & {
+    @apply scale-100;
+  }
+}
+#img-01 {
+  @apply top-[1000px] left-1/2 -translate-x-1/2 -translate-y-1/2 -mt-6;
+  .loaded & {
+    @apply top-1/2;
+  }
+}
+#img-02 {
+  @apply top-[800px] left-0 -translate-y-2/3 pt-12 -mt-6;
+  .loaded & {
+    @apply top-1/2;
+  }
+}
+#img-03 {
+  @apply top-[800px] right-0 -translate-y-3/4 pt-0 -mt-6;
+  .loaded & {
+    @apply top-1/2;
+  }
+}
+#img-04 {
+  @apply -bottom-[300px] left-0 mt-12;
+  .loaded & {
+    @apply bottom-0;
+  }
+}
+#img-05 {
+  @apply top-[1200px] -translate-y-2/3 mt-8 right-0;
+  .loaded & {
+    @apply top-3/4;
+  }
+}
+#dot-pattern-1 {
+  @apply top-[500px] left-1/3 -translate-x-full -translate-y-1/2 ml-4 mt-6;
+  .loaded & {
+    @apply top-1/3;
+  }
+}
+#dot-pattern-2 {
+  @apply top-[600px] rotate-90 right-1/4 translate-x-full -translate-y-full mt-16 -mr-8;
+  .loaded & {
+    @apply top-1/2;
+  }
+}
+#plus-pattern-1 {
+  @apply top-[1000px] left-0 translate-x-full ml-10 mt-10;
+  .loaded & {
+    @apply top-2/3;
+  }
+}
+#plus-pattern-2 {
+  @apply top-[1000px] right-1/4 mr-4;
+  .loaded & {
+    @apply top-2/3;
+  }
+}
+#plus-pattern-3 {
+  @apply bottom-0 left-1/2 -translate-x-1/2;
+  .loaded & {
+    @apply bottom-16;
+  }
+}
+#letter-s {
+  @apply top-[800px] left-0 -translate-y-2/3;
+  .loaded & {
+    @apply top-1/4;
+  }
+}
+#letter-c {
+  @apply top-[1200px] right-0 -translate-y-1/2;
+  .loaded & {
+    @apply top-1/2;
+  }
+}
+#letter-i {
+  @apply top-[1200px] left-1/4 -translate-y-1/2 -translate-x-full mt-10;
+  .loaded & {
+    @apply top-2/3;
+  }
+}
+#letter-s-2 {
+  @apply -bottom-10 right-1/4 translate-x-full;
+  .loaded & {
+    @apply bottom-16;
+  }
+}
+#subtitle {
+  @apply top-[800px] left-1/2 -translate-x-1/2;
+  .loaded & {
+    @apply top-16;
+  }
+}
+#title {
+  @apply top-[800px] left-1/2 -translate-x-1/2;
+  .loaded & {
+    @apply top-36;
+  }
+}
+#description {
+  @apply -bottom-10 left-1/2 -translate-x-1/2;
+  .loaded & {
+    @apply bottom-36;
+  }
+}
+#social-follow {
+  @apply pt-72 flex flex-col items-center gap-2;
+  .loaded & {
+    @apply pt-36;
+  }
+}
+#navbar {
+  @apply -translate-y-full;
+  .loaded & {
+    @apply translate-y-0 opacity-100;
+  }
+}

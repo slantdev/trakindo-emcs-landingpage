@@ -1,0 +1,44 @@
+.navbar {
+  @apply fixed top-0 left-0 right-0 z-50 flex;
+}
+.menu-toggle {
+  @apply bg-[#211815] flex-none flex items-center justify-center w-20 h-20;
+}
+.navwrap {
+  @apply bg-[#211815] h-20 w-full flex items-center;
+}
+.navbrand {
+  @apply flex items-center gap-x-4 px-8;
+  .site-title {
+    @apply text-white font-semibold leading-none;
+  }
+}
+.main-nav {
+  @apply flex gap-x-10 px-8 mx-auto;
+  .nav-link {
+    @apply inline-block font-semibold text-[#A7A5A5] hover:text-white;
+    &.active {
+      @apply text-white;
+    }
+  }
+}
+.toolbar {
+  @apply px-8 flex gap-x-5 items-center;
+}
+.user-nav {
+  @apply flex;
+  &--wrap {
+    @apply flex items-center;
+  }
+  .user-name {
+    @apply text-white mr-5;
+  }
+  .user-avatar {
+    img {
+      @apply rounded-2xl;
+    }
+  }
+}
+.darkmode-toggle {
+  @apply flex items-center justify-center h-8 w-8;
+}
