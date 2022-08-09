@@ -6,3 +6,113 @@
 @import 'partials/fonts.css';
 @import 'partials/navbar.css';
 @import 'partials/scrollmagic.css';
+
+.textSwiper-slide {
+  transition: all 0.3s !important;
+}
+.textSwiper-slide.swiper-slide-next,
+.textSwiper-slide.swiper-slide-prev {
+  opacity: 0;
+}
+.textSwiper-slide.swiper-slide-active {
+  opacity: 1;
+}
+
+.bgSwiper-slide {
+  @apply relative overflow-hidden;
+}
+.bgSwiper-slide-inner {
+  @apply absolute inset-0 overflow-hidden;
+}
+.slide-01-bg,
+.slide-01-cargo,
+.slide-02-sea,
+.slide-02-ship,
+.slide-03-sky,
+.slide-03-cargo,
+.slide-04-bg,
+.slide-04-fg {
+  @apply transition-all duration-[20000ms] ease-linear transform-gpu;
+}
+.slide-04-bg {
+  @apply block w-full h-full object-cover bg-bottom origin-bottom-right scale-100;
+}
+.slide-04-fg {
+  @apply absolute inset-0 h-full w-full object-cover z-10 bg-bottom scale-100 origin-bottom-left;
+}
+.slide-01-bg {
+  @apply block w-full h-full object-cover bg-bottom origin-bottom;
+}
+.slide-01-cargo {
+  @apply absolute z-10 top-[80px] left-1/2 -translate-x-1/2 2xl:top-[130px] 3xl:top-[210px];
+}
+.slide-02-sea {
+  @apply block w-[120%] h-full object-cover absolute top-0 left-0 z-0 origin-top-left;
+}
+.slide-02-ship {
+  @apply absolute right-0 bottom-0 z-10 w-[50%] scale-100 origin-bottom-right;
+}
+.slide-03-sky {
+  @apply block w-full h-[80%] object-cover absolute top-0 left-0 z-0;
+}
+.slide-03-cargo {
+  @apply absolute left-0 right-0 bottom-0 z-10 bg-bottom scale-110 origin-bottom-left;
+}
+.swiper-slide-active {
+  .slide-01-bg {
+    @apply scale-110;
+  }
+  .slide-01-cargo {
+    @apply translate-y-[100px] scale-105 3xl:translate-y-[0px];
+  }
+  .slide-02-sea {
+    @apply scale-[120%];
+  }
+  .slide-02-ship {
+    @apply scale-[120%];
+  }
+  .slide-03-sky {
+    @apply -translate-y-[20%];
+  }
+  .slide-03-cargo {
+    @apply scale-100;
+  }
+  .slide-04-bg {
+    @apply scale-[115%];
+  }
+  .slide-04-fg {
+    @apply scale-[115%];
+  }
+}
+
+#feature-01-text,
+#feature-02-text,
+#feature-03-text {
+  @apply mt-32 opacity-0 transition-all ease-linear duration-1000 translate-y-0;
+  &.reveal {
+    @apply opacity-100;
+  }
+}
+
+#feature-01-img,
+#feature-02-img,
+#feature-03-img {
+  @apply opacity-0 transition-all ease-linear duration-1000;
+  &.reveal {
+    @apply opacity-100;
+  }
+}
+#feature-01-img,
+#feature-03-img {
+  @apply translate-x-36;
+}
+#feature-02-img {
+  @apply -translate-x-36;
+}
+
+#tagline {
+  @apply transition-all ease-linear duration-1000 -mr-48;
+  &.reveal {
+    @apply mr-0;
+  }
+}
