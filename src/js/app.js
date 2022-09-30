@@ -4,6 +4,34 @@ $(function () {
   // });
   // $('body').addClass('loaded');
 
+  var header = $('.header');
+
+  $(window).scroll(function () {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 600) {
+      header.removeClass('clearHeader').addClass('darkHeader');
+    } else {
+      header.removeClass('darkHeader').addClass('clearHeader');
+    }
+  });
+
+  $('.bt-menu-trigger').click(function (e) {
+    e.preventDefault();
+    $('.bt-menu').toggleClass('bt-menu-open');
+    // $('body').toggleClass('overflow-hidden');
+  });
+
+  $('.nav-menu').hover(
+    function () {
+      // over
+      $('.bt-menu').addClass('bt-menu-nav-open');
+    },
+    function () {
+      // out
+      $('.bt-menu').removeClass('bt-menu-nav-open');
+    }
+  );
   // Scroll Magic
   var controller = new ScrollMagic.Controller();
 
@@ -269,3 +297,10 @@ $(function () {
       .addTo(controller);
   });
 });
+
+// const ps = new PerfectScrollbar('#app', {
+//   wheelSpeed: 2,
+//   wheelPropagation: true,
+//   minScrollbarLength: 20,
+// });
+//const ps = new PerfectScrollbar('#app');

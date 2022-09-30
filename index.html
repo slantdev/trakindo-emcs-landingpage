@@ -4,9 +4,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EMCS - Export Monitoring</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abel&family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:wght@300;400&family=Rubik:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <link href="./dist/css/app.css" rel="stylesheet" />
     <link
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="./dist/js/perfect-scrollbar/css/perfect-scrollbar.css"
       rel="stylesheet"
     />
     <script src="./dist/js/lib/jquery.min.js"></script>
@@ -15,19 +25,174 @@
     <script src="./dist/js/scrollmagic/minified/ScrollMagic.min.js"></script>
     <script src="./dist/js/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
     <script src="./dist/js/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
+    <script src="./dist/js/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
     <script src="./dist/js/app.js"></script>
   </head>
   <body class="scroll-smooth bg-black">
-    <div id="app" class="">
+    <div id="app" class="relative">
+      <div class="header fixed top-0 left-0 right-0 px-8 py-8 z-30">
+        <div>
+          <img src="./dist/images/logo.svg" alt="" class="h-14" />
+        </div>
+      </div>
+      <nav class="bt-menu">
+        <a href="#" class="bt-menu-trigger"><span>Menu</span></a>
+        <ul class="nav-menu">
+          <li>
+            <a href="#" class="">
+              <div class="nav-menu-icon text-white">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  data-name="Layer 1"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  class="w-12 h-12"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M19.088,4.95453c-.00732-.00781-.00952-.01819-.01715-.02582s-.01819-.00995-.02606-.01733a9.97886,9.97886,0,0,0-14.08948,0c-.00787.00738-.01837.00964-.02606.01733s-.00983.018-.01715.02582a10,10,0,1,0,14.1759,0ZM12,20a7.9847,7.9847,0,0,1-6.235-3H9.78027a2.9636,2.9636,0,0,0,4.43946,0h4.01532A7.9847,7.9847,0,0,1,12,20Zm-1-5a1,1,0,1,1,1,1A1.001,1.001,0,0,1,11,15Zm8.41022.00208L19.3999,15H15a2.99507,2.99507,0,0,0-2-2.81573V9a1,1,0,0,0-2,0v3.18427A2.99507,2.99507,0,0,0,9,15H4.6001l-.01032.00208A7.93083,7.93083,0,0,1,4.06946,13H5a1,1,0,0,0,0-2H4.06946A7.95128,7.95128,0,0,1,5.68854,7.10211l.65472.65473A.99989.99989,0,1,0,7.75732,6.34277l-.65466-.65466A7.95231,7.95231,0,0,1,11,4.06946V5a1,1,0,0,0,2,0V4.06946a7.95231,7.95231,0,0,1,3.89734,1.61865l-.65466.65466a.99989.99989,0,1,0,1.41406,1.41407l.65472-.65473A7.95128,7.95128,0,0,1,19.93054,11H19a1,1,0,0,0,0,2h.93054A7.93083,7.93083,0,0,1,19.41022,15.00208Z"
+                  />
+                </svg>
+              </div>
+              <span class="nav-menu-label text-2xl px-4">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="">
+              <div class="nav-menu-icon text-white">
+                <svg
+                  width="24"
+                  height="24"
+                  class="w-12 h-12"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M27.972 8C27.849 6.89998 27.3249 5.88387 26.4999 5.14594C25.6749 4.40801 24.6069 4.00003 23.5 4H16.5C15.3931 4.00003 14.3251 4.40801 13.5001 5.14594C12.6751 5.88387 12.151 6.89998 12.028 8H8.5C7.30653 8 6.16193 8.47411 5.31802 9.31802C4.47411 10.1619 4 11.3065 4 12.5V39.5C4 40.6935 4.47411 41.8381 5.31802 42.682C6.16193 43.5259 7.30653 44 8.5 44H25.62C24.7626 43.1074 24.0366 42.0973 23.464 41H8.5C8.10218 41 7.72064 40.842 7.43934 40.5607C7.15804 40.2794 7 39.8978 7 39.5V12.5C7 12.1022 7.15804 11.7206 7.43934 11.4393C7.72064 11.158 8.10218 11 8.5 11H12.758C13.566 12.206 14.94 13 16.5 13H23.5C25.06 13 26.434 12.206 27.242 11H31.5C31.8978 11 32.2794 11.158 32.5607 11.4393C32.842 11.7206 33 12.1022 33 12.5V22.152C33.9923 21.9992 34.9989 21.961 36 22.038V12.5C36 11.3065 35.5259 10.1619 34.682 9.31802C33.8381 8.47411 32.6935 8 31.5 8H27.972ZM27.99 8.192L28 8.5C28 8.396 27.996 8.294 27.99 8.192ZM16.5 7H23.5C23.8978 7 24.2794 7.15804 24.5607 7.43934C24.842 7.72064 25 8.10218 25 8.5C25 8.89782 24.842 9.27936 24.5607 9.56066C24.2794 9.84196 23.8978 10 23.5 10H16.5C16.1022 10 15.7206 9.84196 15.4393 9.56066C15.158 9.27936 15 8.89782 15 8.5C15 8.10218 15.158 7.72064 15.4393 7.43934C15.7206 7.15804 16.1022 7 16.5 7ZM23.914 28.208C24.9884 26.4594 26.4594 24.9884 28.208 23.914L30.06 22.06C30.2074 21.9227 30.3256 21.7571 30.4076 21.5731C30.4895 21.3891 30.5336 21.1905 30.5372 20.989C30.5407 20.7876 30.5037 20.5876 30.4282 20.4008C30.3528 20.214 30.2405 20.0444 30.0981 19.9019C29.9556 19.7595 29.786 19.6472 29.5992 19.5718C29.4124 19.4963 29.2124 19.4593 29.011 19.4628C28.8095 19.4664 28.6109 19.5105 28.4269 19.5924C28.2429 19.6744 28.0773 19.7926 27.94 19.94L18 29.88L14.06 25.94C13.7757 25.675 13.3996 25.5308 13.011 25.5376C12.6224 25.5445 12.2516 25.7019 11.9768 25.9768C11.7019 26.2516 11.5445 26.6224 11.5377 27.011C11.5308 27.3996 11.675 27.7757 11.94 28.06L16.94 33.06C17.2213 33.3409 17.6025 33.4987 18 33.4987C18.3975 33.4987 18.7787 33.3409 19.06 33.06L23.914 28.208ZM46 35C46 32.0826 44.8411 29.2847 42.7782 27.2218C40.7153 25.1589 37.9174 24 35 24C32.0826 24 29.2847 25.1589 27.2218 27.2218C25.1589 29.2847 24 32.0826 24 35C24 37.9174 25.1589 40.7153 27.2218 42.7782C29.2847 44.8411 32.0826 46 35 46C37.9174 46 40.7153 44.8411 42.7782 42.7782C44.8411 40.7153 46 37.9174 46 35ZM36 36L36.002 41.006C36.002 41.2712 35.8966 41.5256 35.7091 41.7131C35.5216 41.9006 35.2672 42.006 35.002 42.006C34.7368 42.006 34.4824 41.9006 34.2949 41.7131C34.1074 41.5256 34.002 41.2712 34.002 41.006V36H28.992C28.7268 36 28.4724 35.8946 28.2849 35.7071C28.0974 35.5196 27.992 35.2652 27.992 35C27.992 34.7348 28.0974 34.4804 28.2849 34.2929C28.4724 34.1054 28.7268 34 28.992 34H34V29C34 28.7348 34.1054 28.4804 34.2929 28.2929C34.4804 28.1054 34.7348 28 35 28C35.2652 28 35.5196 28.1054 35.7071 28.2929C35.8946 28.4804 36 28.7348 36 29V34H40.994C41.2592 34 41.5136 34.1054 41.7011 34.2929C41.8886 34.4804 41.994 34.7348 41.994 35C41.994 35.2652 41.8886 35.5196 41.7011 35.7071C41.5136 35.8946 41.2592 36 40.994 36H36Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+              <span class="nav-menu-label text-2xl px-4">My Task</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="">
+              <div class="nav-menu-icon text-white">
+                <svg
+                  width="24"
+                  height="24"
+                  class="w-12 h-12"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M3.62,17.28a1,1,0,0,0,1.86-.74L4.36,13.72,11,12.25V17a1,1,0,0,0,2,0V12.25l6.64,1.47-1.12,2.82a1,1,0,0,0,.56,1.3,1,1,0,0,0,.37.07,1,1,0,0,0,.93-.63l1.55-3.91a1,1,0,0,0-.05-.84,1,1,0,0,0-.66-.51L18,11.31V7a1,1,0,0,0-1-1H15V3a1,1,0,0,0-1-1H10A1,1,0,0,0,9,3V6H7A1,1,0,0,0,6,7v4.31L2.78,12a1,1,0,0,0-.66.51,1,1,0,0,0-.05.84ZM11,4h2V6H11ZM8,8h8v2.86L12.22,10h-.1L12,10l-.12,0h-.1L8,10.86ZM20.71,19.28a4.38,4.38,0,0,0-1,.45,2.08,2.08,0,0,1-2.1,0,4.62,4.62,0,0,0-4.54,0,2.14,2.14,0,0,1-2.12,0,4.64,4.64,0,0,0-4.54,0,2.08,2.08,0,0,1-2.1,0,4.38,4.38,0,0,0-1-.45A1,1,0,0,0,2,20a1,1,0,0,0,.67,1.24,2.1,2.1,0,0,1,.57.25,4,4,0,0,0,2,.55,4.14,4.14,0,0,0,2.08-.56,2.65,2.65,0,0,1,2.56,0,4.15,4.15,0,0,0,4.12,0,2.65,2.65,0,0,1,2.56,0,4,4,0,0,0,4.1,0,2.1,2.1,0,0,1,.57-.25A1,1,0,0,0,22,20,1,1,0,0,0,20.71,19.28Z"
+                  />
+                </svg>
+              </div>
+              <span class="nav-menu-label text-2xl px-4">Transaction</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="">
+              <div class="nav-menu-icon text-white">
+                <svg
+                  width="24"
+                  height="24"
+                  class="w-12 h-12"
+                  xmlns="http://www.w3.org/2000/svg"
+                  enable-background="new 0 0 24 24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M19,12h-7V5c0-0.6-0.4-1-1-1c-5,0-9,4-9,9s4,9,9,9s9-4,9-9C20,12.4,19.6,12,19,12z M12,19.9c-3.8,0.6-7.4-2.1-7.9-5.9C3.5,10.2,6.2,6.6,10,6.1V13c0,0.6,0.4,1,1,1h6.9C17.5,17.1,15.1,19.5,12,19.9z M15,2c-0.6,0-1,0.4-1,1v6c0,0.6,0.4,1,1,1h6c0.6,0,1-0.4,1-1C22,5.1,18.9,2,15,2z M16,8V4.1C18,4.5,19.5,6,19.9,8H16z"
+                  />
+                </svg>
+              </div>
+              <span class="nav-menu-label text-2xl px-4">Reports</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
       <section
         id="hero"
         class="fade-out-300 w-full h-screen bg-black relative z-0"
       >
-        <div class="absolute bottom-0 w-full">
-          <div class="container mx-auto px-8 relative z-10">
-            <div class="flex gap-x-3 mb-6">
+        <div class="bg-overlay"></div>
+        <div class="absolute left-0 top-1/2 -translate-y-1/4 w-full z-20">
+          <div class="container max-w-screen-xl mx-auto px-8 relative z-10">
+            <div class="flex">
+              <div class="w-full text-white py-4">
+                <div class="text-[46px] leading-none font-regular mb-2">
+                  It’s about
+                </div>
+                <div class="swiper textSwiper">
+                  <div class="swiper-wrapper textSwiper-wrapper">
+                    <div class="swiper-slide textSwiper-slide">
+                      <h2
+                        class="font-regular text-[100px] leading-none tracking-tight -ml-1"
+                      >
+                        Our Commitment
+                      </h2>
+                    </div>
+                    <div class="swiper-slide textSwiper-slide">
+                      <h2
+                        class="font-regular text-[100px] leading-none tracking-tight -ml-1"
+                      >
+                        Our Excellent Services
+                      </h2>
+                    </div>
+                    <div class="swiper-slide textSwiper-slide">
+                      <h2
+                        class="font-regular text-[100px] leading-none tracking-tight -ml-1"
+                      >
+                        Our Best Teamwork
+                      </h2>
+                    </div>
+                    <div class="swiper-slide textSwiper-slide">
+                      <h2
+                        class="font-regular text-[100px] leading-none tracking-tight -ml-1"
+                      >
+                        Our Pride
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex">
+              <div class="w-1/2 text-white text-left flex">
+                <div class="inline-flex gap-x-2 items-center">
+                  <span class="text-4xl">to</span>
+                  <img
+                    class="flex-none h-8"
+                    src="./dist/images/advancing-you-forward-02.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <!-- <div class="w-1/2 bg-[#FCBA12] px-8 py-8">
+                <div class="flex gap-x-4 items-center justify-center">
+                  <div
+                    class="text-xl font-extrabold text-left text-black leading-tight"
+                  >
+                    EXPORT MONITORING AND<br />
+                    CONTROLLING SYSTEM
+                  </div>
+                  <a href="#" class="bg-black text-white py-3 px-6 rounded-md"
+                    >GO TO DASHBOARD</a
+                  >
+                </div>
+              </div> -->
+            </div>
+            <div class="flex gap-x-4 mt-20">
               <button
-                class="swiper-btn-prev bg-black bg-opacity-50 hover:bg-opacity-100 w-12 h-12 flex justify-center items-center rounded-full"
+                class="swiper-btn-prev flex justify-center items-center text-white text-opacity-80 hover:text-opacity-100"
                 type="button"
               >
                 <svg
@@ -40,7 +205,7 @@
                 >
                   <path
                     d="M12.25 1.25L21 10L12.25 18.75M1 10H21H1Z"
-                    stroke="white"
+                    stroke="currentColor"
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -48,7 +213,7 @@
                 </svg>
               </button>
               <button
-                class="swiper-btn-next bg-black bg-opacity-50 hover:bg-opacity-100 w-12 h-12 flex justify-center items-center rounded-full"
+                class="swiper-btn-next flex justify-center items-center text-white text-opacity-80 hover:text-opacity-100"
                 type="button"
               >
                 <svg
@@ -60,67 +225,13 @@
                 >
                   <path
                     d="M12.25 1.25L21 10L12.25 18.75M1 10H21H1Z"
-                    stroke="white"
+                    stroke="currentColor"
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   />
                 </svg>
               </button>
-            </div>
-            <div class="flex">
-              <div class="w-1/2 bg-black bg-opacity-50 text-white p-8">
-                <div class="text-[36px] font-light mb-2">It’s about</div>
-                <div class="swiper textSwiper">
-                  <div class="swiper-wrapper textSwiper-wrapper">
-                    <div class="swiper-slide textSwiper-slide">
-                      <h2 class="font-black text-[60px] leading-none">
-                        OUR<br />COMMITMENT
-                      </h2>
-                    </div>
-                    <div class="swiper-slide textSwiper-slide">
-                      <h2 class="font-black text-[60px] leading-none">
-                        OUR EXCELLENT<br />SERVICES
-                      </h2>
-                    </div>
-                    <div class="swiper-slide textSwiper-slide">
-                      <h2 class="font-black text-[60px] leading-none">
-                        OUR BEST<br />TEAMWORK
-                      </h2>
-                    </div>
-                    <div class="swiper-slide textSwiper-slide">
-                      <h2 class="font-black text-[60px] leading-none">
-                        OUR<br />PRIDE
-                      </h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="flex">
-              <div class="w-1/2 bg-black text-white text-left px-8 py-8 flex">
-                <div class="inline-flex gap-x-2 items-center">
-                  <span class="text-xl">to</span>
-                  <img
-                    class="flex-none"
-                    src="./dist/images/advancing-you-forward.png"
-                    alt=""
-                  />
-                </div>
-              </div>
-              <div class="w-1/2 bg-[#FCBA12] px-8 py-8">
-                <div class="flex gap-x-4 items-center justify-center">
-                  <div
-                    class="text-xl font-extrabold text-left text-black leading-tight"
-                  >
-                    EXPORT MONITORING AND<br />
-                    CONTROLLING SYSTEM
-                  </div>
-                  <a href="#" class="bg-black text-white py-3 px-6 rounded-md"
-                    >GO TO DASHBOARD</a
-                  >
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -185,6 +296,15 @@
       </section>
       <div id="trigger-1"></div>
       <div class="bg-white relative z-0">
+        <div class="absolute left-0 right-0 top-0 h-8 bg-[#fab711] z-20 -mt-8">
+          <div class="flex">
+            <div class="w-3/5 h-8 bg-[#fab711]"></div>
+            <div class="w-2/5 h-8 flex">
+              <div class="w-3/5 h-8 bg-[#d59c0f]"></div>
+              <div class="w-2/5 h-8 bg-[#a5760e]"></div>
+            </div>
+          </div>
+        </div>
         <section
           id="feature-01"
           class="flex flex-col bg-white relative z-0 overflow-hidden"
@@ -192,8 +312,10 @@
           <div class="bg-slate-100 py-14 flex-none">
             <div class="container mx-auto px-8">
               <div class="text-center">
-                <h2 class="text-[40px] font-bold">Manage, Monitor & Control</h2>
-                <p>
+                <h2 class="text-[48px] font-medium">
+                  Manage, Monitor & Control
+                </h2>
+                <p class="text-2xl">
                   Designed to make the process of managing export quick, easy
                   and effective
                 </p>
@@ -221,8 +343,8 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-[32px] font-bold">Manage Tasks</h3>
-                  <p>
+                  <h3 class="text-[40px] font-medium">Manage Tasks</h3>
+                  <p class="text-xl">
                     Easily manage and track your tasks. Used for managing CIPL,
                     Receipt Goods, Cargo, Shipping Instructions, PEB & NPE,
                     BL/AWB and more.
@@ -230,7 +352,7 @@
                   <div class="mt-6">
                     <a
                       href="#"
-                      class="py-4 px-8 inline-block rounded-lg text-sm uppercase font-semibold bg-[#FCBA12] transition hover:bg-yellow-400"
+                      class="py-3 px-8 inline-block rounded-full text-xl leading-tight uppercase font-medium bg-[#FCBA12] transition hover:bg-yellow-400"
                       >GO TO MY TASK</a
                     >
                   </div>
@@ -271,15 +393,15 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-[32px] font-bold">Manage Transactions</h3>
-                  <p>
+                  <h3 class="text-[40px] font-medium">Manage Transactions</h3>
+                  <p class="text-xl">
                     Used for managing Commercial Invoice Packing List, BAST
                     Receipt Goods, Cargo List and more...
                   </p>
                   <div class="mt-6">
                     <a
                       href="#"
-                      class="py-4 px-8 inline-block rounded-lg text-sm uppercase font-semibold bg-[#FCBA12] transition hover:bg-yellow-400"
+                      class="py-3 px-8 inline-block rounded-full text-xl leading-tight uppercase font-semibold bg-[#FCBA12] transition hover:bg-yellow-400"
                       >GO TO TRANSACTIONS</a
                     >
                   </div>
@@ -320,8 +442,8 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-[32px] font-bold">Show Reports</h3>
-                  <p>
+                  <h3 class="text-[40px] font-medium">Show Reports</h3>
+                  <p class="text-xl">
                     See a comprehensive data reports such as Details Tracking
                     Reports, Export Activity Reports, and Outstanding CIPL
                     Reports.
@@ -329,7 +451,7 @@
                   <div class="mt-6">
                     <a
                       href="#"
-                      class="py-4 px-8 inline-block rounded-lg text-sm uppercase font-semibold bg-[#FCBA12] transition hover:bg-yellow-400"
+                      class="py-3 px-8 inline-block rounded-full text-xl leading-tight uppercase font-semibold bg-[#FCBA12] transition hover:bg-yellow-400"
                       >GO TO REPORTS</a
                     >
                   </div>
@@ -353,10 +475,10 @@
           <div class="bg-white w-full mt-auto">
             <div class="flex justify-end">
               <div id="tagline" class="w-2/3 bg-[#FCBA12] py-12 pl-72 pr-8">
-                <h3 class="font-black text-5xl tracking-tight mb-4">
-                  ONE TEAM ONE GOAL
+                <h3 class="font-medium text-[60px] tracking-tight mb-4">
+                  One Team One Goal
                 </h3>
-                <p class="text-xl">
+                <p class="text-2xl">
                   Different role, different task, different department,<br />But
                   we are <strong>the A team</strong>.
                 </p>
@@ -375,8 +497,10 @@
               </div>
               <div class="w-1/2">
                 <div id="footer-text" class="py-20 px-16 max-w-screen-sm">
-                  <h3 class="text-white text-4xl font-bold mb-4">Need Help?</h3>
-                  <p class="text-white">
+                  <h3 class="text-white text-5xl font-medium mb-4">
+                    Need Help?
+                  </h3>
+                  <p class="text-white text-xl">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Porta elit gravida nam natoque. Sit leo phasellus metus,
                     amet sit enim. Aliquet lectus eu molestie.
@@ -384,12 +508,12 @@
                   <div class="mt-8 flex gap-x-4">
                     <a
                       href="#"
-                      class="py-4 px-8 inline-block rounded-lg text-sm uppercase font-semibold bg-[#FCBA12] transition hover:bg-yellow-400"
+                      class="py-3 px-8 inline-block rounded-full text-lg leading-tight uppercase font-semibold bg-[#FCBA12] transition hover:bg-yellow-400"
                       >BROWSE USER GUIDE</a
                     >
                     <a
                       href="#"
-                      class="py-4 px-8 inline-block rounded-lg text-sm uppercase font-semibold bg-white transition hover:bg-slate-50"
+                      class="py-3 px-8 inline-block rounded-full text-lg leading-tight uppercase font-semibold bg-white transition hover:bg-slate-50"
                       >ASK SUPPORT</a
                     >
                   </div>

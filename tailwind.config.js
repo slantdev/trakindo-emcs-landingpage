@@ -13,7 +13,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['"SF UI Text"', ...defaultTheme.fontFamily.sans],
+        sans: ['"Barlow Condensed"', ...defaultTheme.fontFamily.sans],
         chronicle: ['"Chronicle Display"', ...defaultTheme.fontFamily.serif],
       },
     },

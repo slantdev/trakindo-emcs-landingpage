@@ -1,6 +1,27 @@
 (() => {
   // src/js/app.js
   $(function() {
+    var header = $(".header");
+    $(window).scroll(function() {
+      var scroll = $(window).scrollTop();
+      if (scroll >= 600) {
+        header.removeClass("clearHeader").addClass("darkHeader");
+      } else {
+        header.removeClass("darkHeader").addClass("clearHeader");
+      }
+    });
+    $(".bt-menu-trigger").click(function(e) {
+      e.preventDefault();
+      $(".bt-menu").toggleClass("bt-menu-open");
+    });
+    $(".nav-menu").hover(
+      function() {
+        $(".bt-menu").addClass("bt-menu-nav-open");
+      },
+      function() {
+        $(".bt-menu").removeClass("bt-menu-nav-open");
+      }
+    );
     var controller = new ScrollMagic.Controller();
     $(".fade-out-50").each(function() {
       var tween = TweenMax.to(".fade-out-50", 0.2, {
