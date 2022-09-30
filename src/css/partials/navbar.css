@@ -42,3 +42,94 @@
 .darkmode-toggle {
   @apply flex items-center justify-center h-8 w-8;
 }
+
+.header {
+  @apply transition-all duration-500;
+  &.darkHeader {
+    @apply bg-black;
+  }
+}
+.bt-menu-trigger {
+  @apply fixed inline-block h-12 w-12 right-8 top-8 z-50;
+  span {
+    @apply absolute top-1/2 left-0 h-1 w-full text-[0px] bg-white;
+    &:before {
+      content: '';
+      transition: transform 0.3s;
+      @apply absolute left-0 h-1 w-full bg-white -translate-y-[250%];
+    }
+    &:after {
+      content: '';
+      transition: transform 0.3s;
+      @apply absolute left-0 h-1 w-full bg-white  translate-y-[250%];
+    }
+  }
+}
+.bt-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  //height: 0;
+  border-width: 0px;
+  border-style: solid;
+  border-color: #000;
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: border-width 0.3s, background-color 0.3s;
+  transition: border-width 0.3s, background-color 0.3s;
+  @apply z-30;
+  .nav-menu {
+    @apply fixed top-28 -right-[7rem] m-0 p-0 z-50;
+    li {
+      opacity: 0;
+      -webkit-transition: -webkit-transform 0.3s, opacity 0.3s,
+        visibility 0s 0.3s;
+      transition: transform 0.3s, opacity 0.3s, visibility 0s 0.3s;
+      visibility: hidden;
+      @apply translate-x-16;
+    }
+    a {
+      @apply flex items-center text-white px-8 py-4 w-[14rem] border-y border-solid border-gray-700 -mt-px opacity-80 hover:opacity-100;
+    }
+    .nav-menu-label {
+      @apply opacity-0 transition-all duration-300;
+    }
+  }
+  &.bt-menu-open {
+    height: 100%;
+    border-width: 32px 7rem 32px 32px;
+    background-color: rgba(0, 0, 0, 0.1);
+    @apply transition-all duration-300;
+    .bt-menu-trigger {
+      span {
+        background-color: transparent;
+        &:before {
+          transform: translateY(0) rotate(45deg);
+        }
+        &:after {
+          transform: translateY(0) rotate(-45deg);
+        }
+      }
+    }
+    .nav-menu {
+      @apply transition-all duration-300;
+      li {
+        visibility: visible;
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        @apply transition-all duration-300;
+      }
+    }
+    &.bt-menu-nav-open {
+      border-right-width: 14rem;
+      .nav-menu {
+        right: 0;
+      }
+      .nav-menu-label {
+        @apply opacity-100;
+      }
+    }
+  }
+}
