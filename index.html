@@ -533,10 +533,14 @@
     <script>
       var bgSwiper = new Swiper('.bgSwiper', {
         //effect: 'fade',
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true,
+        },
         speed: 1500,
         loop: true,
-        parallax: true,
-        longSwipesRatio: 0.01,
+        //        parallax: true,
+        //        longSwipesRatio: 0.01,
         grabCursor: true,
         autoplay: {
           delay: 8000,
