@@ -1087,11 +1087,6 @@ video {
   gap: 1rem;
 }
 
-.gap-x-10 {
-  -moz-column-gap: 2.5rem;
-       column-gap: 2.5rem;
-}
-
 .gap-x-2 {
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
@@ -1284,10 +1279,6 @@ video {
   --tw-bg-opacity: 0.9;
 }
 
-.bg-clip-padding {
-  background-clip: padding-box;
-}
-
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1308,14 +1299,19 @@ video {
   padding-bottom: 2rem;
 }
 
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .py-0 {
   padding-top: 0px;
   padding-bottom: 0px;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .py-4 {
@@ -1371,16 +1367,6 @@ video {
 .py-24 {
   padding-top: 6rem;
   padding-bottom: 6rem;
-}
-
-.px-0 {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 .pt-16 {
@@ -2533,9 +2519,9 @@ body {
   margin-right: 0px;
 }
 
-.hover\:bg-primary:hover {
+.hover\:bg-secondary:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 122 0 / var(--tw-bg-opacity));
+  background-color: rgb(246 178 33 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-\[\#fab711\]:hover {
@@ -2551,11 +2537,6 @@ body {
 .hover\:bg-slate-50:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-secondary:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(246 178 33 / var(--tw-bg-opacity));
 }
 
 .hover\:text-opacity-100:hover {
