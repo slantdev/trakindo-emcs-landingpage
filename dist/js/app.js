@@ -12,16 +12,16 @@
     });
     $(".bt-menu-trigger").click(function(e) {
       e.preventDefault();
-      $(".bt-menu").toggleClass("bt-menu-open");
+      $(".bt-menu-trigger").toggleClass("bt-menu-open");
     });
-    $(".nav-menu").hover(
-      function() {
-        $(".bt-menu").addClass("bt-menu-nav-open");
-      },
-      function() {
-        $(".bt-menu").removeClass("bt-menu-nav-open");
-      }
-    );
+    $(".main-menu-trigger").click(function(e) {
+      e.preventDefault();
+      $(".main-menu-trigger").toggleClass("main-menu-open");
+    });
+    $(".menu-dropdown").click(function(e) {
+      e.preventDefault();
+      $(this).next().slideToggle();
+    });
     var controller = new ScrollMagic.Controller();
     $(".fade-out-50").each(function() {
       var tween = TweenMax.to(".fade-out-50", 0.2, {
