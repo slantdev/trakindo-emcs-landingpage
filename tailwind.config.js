@@ -12,6 +12,10 @@ module.exports = {
       '3xl': '1536px',
     },
     extend: {
+      colors: {
+        primary: '#FF7A00',
+        secondary: '#F6B221',
+      },
       fontFamily: {
         sans: ['"Barlow Condensed"', ...defaultTheme.fontFamily.sans],
         chronicle: ['"Chronicle Display"', ...defaultTheme.fontFamily.serif],

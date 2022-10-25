@@ -133,3 +133,33 @@
     }
   }
 }
+.main-menu {
+  @apply fixed right-12 top-8 z-50;
+}
+.main-menu-trigger {
+  @apply absolute inline-block h-12 w-12 right-0 top-0 z-50;
+  span {
+    @apply absolute top-1/2 left-0 h-1 w-full text-[0px] bg-white;
+    &:before {
+      content: '';
+      transition: transform 0.3s;
+      @apply absolute left-0 h-1 w-full bg-white -translate-y-[250%];
+    }
+    &:after {
+      content: '';
+      transition: transform 0.3s;
+      @apply absolute left-0 h-1 w-full bg-white  translate-y-[250%];
+    }
+  }
+  &.main-menu-open {
+    span {
+      background-color: transparent;
+      &:before {
+        transform: translateY(0) rotate(45deg);
+      }
+      &:after {
+        transform: translateY(0) rotate(-45deg);
+      }
+    }
+  }
+}

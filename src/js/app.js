@@ -18,20 +18,31 @@ $(function () {
 
   $('.bt-menu-trigger').click(function (e) {
     e.preventDefault();
-    $('.bt-menu').toggleClass('bt-menu-open');
+    $('.bt-menu-trigger').toggleClass('bt-menu-open');
+    //$('.bt-menu').toggleClass('bt-menu-open');
     // $('body').toggleClass('overflow-hidden');
   });
 
-  $('.nav-menu').hover(
-    function () {
-      // over
-      $('.bt-menu').addClass('bt-menu-nav-open');
-    },
-    function () {
-      // out
-      $('.bt-menu').removeClass('bt-menu-nav-open');
-    }
-  );
+  $('.main-menu-trigger').click(function (e) {
+    e.preventDefault();
+    $('.main-menu-trigger').toggleClass('main-menu-open');
+  });
+
+  $('.menu-dropdown').click(function (e) {
+    e.preventDefault();
+    $(this).next().slideToggle();
+  });
+
+  // $('.nav-menu').hover(
+  //   function () {
+  //     // over
+  //     $('.bt-menu').addClass('bt-menu-nav-open');
+  //   },
+  //   function () {
+  //     // out
+  //     $('.bt-menu').removeClass('bt-menu-nav-open');
+  //   }
+  // );
   // Scroll Magic
   var controller = new ScrollMagic.Controller();
 
